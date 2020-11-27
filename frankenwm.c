@@ -3492,7 +3492,7 @@ void update_current(client *newfocus)   // newfocus may be NULL
                 continue;
             }
         }
-        xcb_raise_window(dis, c->win);
+        /*xcb_raise_window(dis, c->win);*/
     }
     if(rl)
         xcb_raise_window(dis, rl->win);

@@ -16,14 +16,14 @@
 #define PANEL_HEIGHT    18        /* 0 for no space for panel, thus no panel */
 #define DEFAULT_MODE    TILE      /* TILE MONOCLE BSTACK GRID FIBONACCI EQUAL */
 #define ATTACH_ASIDE    True      /* False means new window is master */
-#define FOLLOW_MOUSE    False     /* Focus the window the mouse just entered */
+#define FOLLOW_MOUSE    False      /* Focus the window the mouse just entered */
 #define FOLLOW_WINDOW   False     /* Follow the window when moved to a different desktop */
 #define CLICK_TO_FOCUS  True      /* Focus an unfocused window when clicked */
 #define BORDER_WIDTH    2         /* window border width */
-#define SCRATCH_WIDTH   1         /* scratch window border width, 0 to disable */
-#define FOCUS           "#cccccc" /* focused window border color   */
+#define SCRATCH_WIDTH   2         /* scratch window border width, 0 to disable */
+#define FOCUS           "#9966cc" /* focused window border color   */
 #define UNFOCUS         "#121212" /* unfocused window border color */
-#define SCRATCH         "#cc0000" /* scratchpad border color */
+#define SCRATCH         "#6699cc" /* scratchpad border color */
 #define DESKTOPS        10        /* number of desktops - edit DESKTOPCHANGE keys to suit */
 #define DEFAULT_DESKTOP 0         /* the desktop to focus on exec */
 #define MINWSZ          50        /* minimum window size in pixels */
@@ -33,7 +33,7 @@
 #define INVERT          False     /* use alternative modes by default */
 #define AUTOCENTER      True      /* automatically center windows floating by default */
 #define OUTPUT_TITLE    False     /* output the title of the currently active window */
-#define USE_SCRATCHPAD  False     /* enable the scratchpad functionality */
+#define USE_SCRATCHPAD  True      /* enable the scratchpad functionality */
 #define CLOSE_SCRATCHPAD True     /* close scratchpad on quit */
 #define SCRPDNAME       "scratchpad" /* the name of the scratchpad window */
 #define EWMH_TASKBAR    True      /* False if text (or no) panel/taskbar */
@@ -65,9 +65,9 @@ static const AppRule rules[] = { \
  * window. The title of the scratchpad window should also match SCRPDNAME from
  * above
  */
-static const char *termcmd[] = { "xterm",     NULL };
+static const char *termcmd[] = { "st",        NULL };
 static const char *menucmd[] = { "dmenu_run", NULL };
-static const char *scrpcmd[] = { "xterm", "-T", "scratchpad", NULL };
+static const char *scrpcmd[] = { "st", "-t", "scratchpad", NULL };
 /* static const char *scrpcmd[] = { "urxvt", "-name", "scratchpad",  NULL }; */
 
 #define DESKTOPCHANGE(K,N) \
